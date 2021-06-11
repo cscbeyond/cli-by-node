@@ -1,0 +1,29 @@
+{
+  "name": <%= packageName %>,
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts":{
+    "build": "rm -rf && node index.js"
+  },
+  "keywords":[],
+  "dependencies":{
+    "koa": "^3.12.1"
+ 
+    <% if(middlewear.router){ %>
+      ,"koa-router":"^10.0.0"
+    <% } %>
+
+    <% if(middlewear.views){ %>
+      ,"koa-views":"^7.0.1"
+      ,"pug": "^3.0.2"
+    <% } %>
+    
+    <% if(middlewear.body){ %>
+      ,"koa-body":"^4.1.3"
+    <% } %>
+   
+    <% if(middlewear.static){ %>
+      ,"koa-static":"^5.0.0"
+    <% } %>
+  }
+}
